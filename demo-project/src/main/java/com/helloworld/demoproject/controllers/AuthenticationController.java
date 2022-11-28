@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.webencyclop.demo.service.UserService;
+import com.helloworld.demoproject.models.User;
+import com.helloworld.demoproject.services.UserService;
 
 @Controller
 public class AuthenticationController {
