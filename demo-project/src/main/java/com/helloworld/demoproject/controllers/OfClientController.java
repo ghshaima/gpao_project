@@ -1,6 +1,5 @@
 package com.helloworld.demoproject.controllers;
 
-
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -16,15 +15,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.helloworld.demoproject.entities.article;
 import com.helloworld.demoproject.entites.Client;
 import com.helloworld.demoproject.entites.CommandeClient;
-import com.stock.mvc.entites.LigneCommandeClient;
-import com.stock.mvc.model.ModelCommandeClient;
-import com.stock.mvc.model.StringResponse;
-import com.stock.mvc.services.IArticleService;
-import com.stock.mvc.services.IClientService;
-import com.stock.mvc.services.ICommandeClientService;
-import com.stock.mvc.services.ILigneCommandeClientService;
-
-
+import com.helloworld.demoproject.entites.LigneCommandeClient;
+import com.helloworld.demoproject.models.ModelCommandeClient;
+import com.helloworld.demoproject.models.StringResponse;
+import com.helloworld.demoproject.services.IArticleService;
+import com.helloworld.demoproject.services.IClientService;
+import com.helloworld.demoproject.services.ICommandeClientService;
+import com.helloworld.demoproject.services.ILigneCommandeClientService;
 
 
 @Controller
