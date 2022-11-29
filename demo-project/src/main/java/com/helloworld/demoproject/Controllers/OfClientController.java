@@ -1,4 +1,4 @@
-package com.helloworld.demoproject.controllers;
+package com.helloworld.demoproject.Controllers;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -12,16 +12,16 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.helloworld.demoproject.entities.article;
-import com.helloworld.demoproject.entites.Client;
-import com.helloworld.demoproject.entites.CommandeClient;
-import com.helloworld.demoproject.entites.LigneCommandeClient;
-import com.helloworld.demoproject.models.ModelCommandeClient;
+import com.helloworld.demoproject.entities.Article;
+import com.helloworld.demoproject.entities.Client;
+import com.helloworld.demoproject.entities.Of;
+
+import com.helloworld.demoproject.models.OfClient;
 import com.helloworld.demoproject.models.StringResponse;
-import com.helloworld.demoproject.services.IArticleService;
-import com.helloworld.demoproject.services.IClientService;
-import com.helloworld.demoproject.services.ICommandeClientService;
-import com.helloworld.demoproject.services.ILigneCommandeClientService;
+import com.helloworld.demoproject.services.ArticleService;
+import com.helloworld.demoproject.services.ClientService;
+import com.helloworld.demoproject.services.OfService;
+
 
 
 @Controller
@@ -31,33 +31,32 @@ import com.helloworld.demoproject.services.ILigneCommandeClientService;
 public class OfClientController {
 	
 	@Autowired
-	private ICommandeClientService commandeService;
+	private OfService commandeService;
+	
+	
 	
 	@Autowired
-	private ILigneCommandeClientService ligneCdeService;
+	private ClientService clientService;
 	
 	@Autowired
-	private IClientService clientService;
+	private ArticleService articleService;
 	
 	@Autowired
-	private IArticleService articleService;
-	
-	@Autowired
-	private ModelCommandeClient modelCommande;
+	private OfClient ofclient;
 	
 	@RequestMapping(value = "/")
 	public String index(Model model) {
-		List<CommandeClient> commandesClient = commandeService.selectAll();
-		if (commandesClient.isEmpty()) {
-			commandesClient = new ArrayList<CommandeClient>();
+		List<Of> of = commandeService.selectAll();
+		if (Of.isEmpty()) {
+			of = new ArrayList<Of>();
 		} else {
-			for (CommandeClient commandeClient : commandesClient) {
-				List<LigneCommandeClient> ligneCdeClt = ligneCdeService.getByIdCommande(commandeClient.getIdCommandeClient());
+			for (OfClient commandeClient : ofclient) {
+				List<OfClient> ligneCdeClt = ligneCdeService.getByIdCommande(commandeClient.getIdCommandeClient());
 				commandeClient.setLigneCommandeClients(ligneCdeClt);
 			}
 		}
 		
-		model.addAttribute("commandesClient", commandesClient);
+		model.addAttribute("ofClient", ofclient);
 		return "commandeclient/commandeclient";
 	}
 	
@@ -67,9 +66,9 @@ public class OfClientController {
 		if (clients.isEmpty()) {
 			clients = new ArrayList<Client>();
 		}
-		modelCommande.creerCommande();
-		model.addAttribute("code", modelCommande.getCommande().getCode());
-		model.addAttribute("dateCde", modelCommande.getCommande().getDateCommande());
+		OfClient.creerOfClient();
+		model.addAttribute("code", OfClient.getOfClient().getCode());
+		model.addAttribute("dateCde", OfClient.getOfClient().getDateOf());
 		model.addAttribute("clients", clients);
 		return "commandeclient/nouvellecommande";
 	}

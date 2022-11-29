@@ -1,6 +1,6 @@
 package com.helloworld.demoproject.entities;
 
-public class ilot {
+public class Ilot {
 
     private Integer ilot_id;
     private Integer specialite;

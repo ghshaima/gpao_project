@@ -1,5 +1,5 @@
 package com.helloworld.demoproject.services;
 
-public class ilotServiceImp {
+public class ArticleServiceImp {
     
 }

@@ -1,4 +1,4 @@
-package com.helloworld.demoproject.controllers;
+package com.helloworld.demoproject.Controllers;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;

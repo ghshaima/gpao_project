@@ -1,6 +1,6 @@
 package com.helloworld.demoproject.entities;
 
-public class machine {
+public class Machine {
 
     private Integer machine_id;
     private Integer type_machine;

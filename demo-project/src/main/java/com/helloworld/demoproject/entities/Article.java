@@ -2,7 +2,7 @@ package com.helloworld.demoproject.entities;
 
 import java.io.Serializable;
 
-public class article implements Serializable{
+public class Article implements Serializable{
    
 	private Long idArticle;
 

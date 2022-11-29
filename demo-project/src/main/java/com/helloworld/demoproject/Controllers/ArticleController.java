@@ -1,4 +1,4 @@
-package com.helloworld.demoproject.controllers;
+package com.helloworld.demoproject.Controllers;
 
 
 import java.io.IOException;
@@ -17,10 +17,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.helloworld.demoproject.entities.article;
+import com.helloworld.demoproject.entities.Article;
 import com.helloworld.demoproject.entities.Category;
 
-import com.helloworld.demoproject.services.articleService;
+import com.helloworld.demoproject.services.ArticleService;
 import com.helloworld.demoproject.services.CategoryService;
 
 
@@ -31,7 +31,7 @@ import com.helloworld.demoproject.services.CategoryService;
 
 @Controller
 @RequestMapping(value = "/article")
-public class articleController  {
+public class ArticleController  {
 	
 	@Autowired
 	private ArticleService articleService;
@@ -95,7 +95,7 @@ public class articleController  {
 	@RequestMapping(value = "/modifier/{idArticle}")
 	public String modifierArticle(Model model, @PathVariable Long idArticle) {
 		if (idArticle != null) {
-			article article = articleService.getById(idArticle);
+			Article article = articleService.getById(idArticle);
 			List<Category> categories = catService.selectAll();
 			if (categories == null) {
 				categories = new ArrayList<Category>();
@@ -111,7 +111,7 @@ public class articleController  {
 	@RequestMapping(value = "/supprimer/{idArticle}")
 	public String supprimerArticle(Model model, @PathVariable Long idArticle) {
 		if (idArticle != null) {
-			article Article = articleService.getById(idArticle);
+			Article Article = articleService.getById(idArticle);
 			if (Article != null) {
 				//TODO Verification avant suppression
 				articleService.remove(idArticle);

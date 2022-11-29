@@ -3,7 +3,7 @@ package com.helloworld.demoproject.entities;
 import java.text.DecimalFormat;
 import java.util.Date;
 
-public class of {
+public class Of {
 
     private Integer of_id;
     private Date date_of;

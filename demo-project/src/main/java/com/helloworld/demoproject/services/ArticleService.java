@@ -1,7 +1,9 @@
 package com.helloworld.demoproject.services;
-import com.helloworld.demoproject.entities.article;
+import java.util.List;
 
-public interface articleService {
+import com.helloworld.demoproject.entities.Article;
+
+public interface ArticleService {
 
    
 

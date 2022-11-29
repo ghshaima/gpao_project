@@ -2,7 +2,7 @@ package com.helloworld.demoproject.entities;
 
 import java.io.Serializable;
 
-public class client implements Serializable{
+public class Client implements Serializable{
 
 	private Long idClient;
 
